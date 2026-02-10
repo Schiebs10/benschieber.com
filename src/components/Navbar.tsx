@@ -22,15 +22,7 @@ export default function Navbar() {
   const location = useLocation();
   const isHome = location.pathname === '/';
   const isDesktop = useMediaQuery('(min-width: 768px)');
-  const [scrolled, setScrolled] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
 
   const scrollToSection = (id: string) => {
